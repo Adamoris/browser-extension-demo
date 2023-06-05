@@ -3,7 +3,7 @@
     "name": "My Web Scraper",
     "version": "1.0",
     "description": "A web scraper for Chrome",
-    "permissions": ["activeTab"],
+    "permissions": ["activeTab", "identity"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
@@ -13,7 +13,7 @@
       }
     },
     "background": {
-      "service_worker": "background.js"
+      "service_worker": "firebase.js"
     },
     "content_scripts": [
       {

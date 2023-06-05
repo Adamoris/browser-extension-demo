@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "Bitter";
+    src: url("../fonts/Bitter-Medium.ttf");
+}
+
+body {
+
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
+    width: 320px;
+    height: 400px;
+
+    font-size: small;
+    text-overflow: break-word;
+    inline-size: 310px;
+    display: inline-block;
+    word-break: break-word;
+    font-family: "Bitter", Georgia, Inter;
+    padding: 10px 25px;
+    
+    background-color: #FAF5EA;
+    border: 1px solid #000000;
+}
+
+.pie-chart {
+    width: 200px;
+    height: 200px;
+    float: right;
+    bottom: 50px;
+}
+
+.settings {
+    width: 20px;
+    height: 20px;
+}
+
+.sourceboxpad {
+    width: 50px;
+    height: 100px;
+  }
+
+button {
+    margin-top: 10px;
+}
+
+.frectangle {
+    width: 345px;
+    height: 32px;
+    background-color: gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    font-family: "Bitter", Georgia, Inter;
+    font-size: 10px;
+    line-height: 32px;
+    padding-right: 15px;
+    border: 1px solid #000000;
+    color: #FAF3EA;
+  }
+
+.buttontr {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+      
+    line-height: 12px;
+    width: 18px;
+    font-size: 8pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:35px;
+    right:50px;
+}
+
+.fhr {
+    width: 60%;
+    color: #000000;
+    margin: 20px 0 10px 0; 
+  }
+
+  .inputtext {
+    width: 75%;
+    float: center;
+    padding: 5px 2px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: inherit;
+    font-family: inherit;
+    outline: none;
+  }
+
+  .signinbutton {
+    border: 2px solid black;
+    width: 75px;
+    height: 35px;
+    outline: none;
+    font-family: inherit;
+    background-color: inherit;
+    margin: 10px 10px 10px 0;
+  }
