@@ -46,7 +46,42 @@ try {
             });
             return true;
         }
+        if (msg.command == 'signout') {
+            console.log("Attempting to sign out user.");
+            firebase.auth().signOut().then(function() {
+                console.log("User successfully signed out.");
+                resp({result: "success"});
+            }).catch(function(error) {
+                console.log("User sign out failed.");
+                resp({result: "failure"});
+            });
+            return true;
+        }
+        if (msg.command == 'checkAuth') {
+            var user = firebase.auth().currentUser;
+            if (user) {
+                // User is signed in
+                console.log("User is signed in.");
+                resp({result: "loggedIn"});
+            } else {
+                // No user is signed in
+                console.log("No user is signed in.");
+                resp({result: "loggedOut"});
+            }
+            return true; 
+        }
       });
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in, send a message to the popup
+            chrome.runtime.sendMessage({command: "authChange", loggedIn: true});
+        } else {
+            // No user is signed in, send a message to the popup
+            chrome.runtime.sendMessage({command: "authChange", loggedIn: false});
+        }
+    });
+    
 
 } catch(e) {
     console.log("Firebase is not initialized due to error: " + e + ".");

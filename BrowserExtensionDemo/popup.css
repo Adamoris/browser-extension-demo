@@ -106,4 +106,16 @@ button {
     font-family: inherit;
     background-color: inherit;
     margin: 10px 10px 10px 0;
+    transition: background-color 0.3s ease, color 0.3s ease; /* optional, for smooth color transition */
   }
+
+  /* Change color on hover */
+.signinbutton:hover {
+    background-color: #cfc5b8;  /* you can change this color */
+    cursor: pointer; /* change the cursor to a hand when hovering over the button */
+}
+
+/* Change color on click */
+.signinbutton:active {
+    background-color: #a39a8d;  /* you can change this color */
+}

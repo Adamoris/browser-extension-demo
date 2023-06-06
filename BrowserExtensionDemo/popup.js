@@ -18,6 +18,7 @@ loginButton.addEventListener('click', function() {
   }, function(response) {
       if(response.result === 'success') {
           // Handle successful login
+          window.location.href = "home.html";
       } else {
           // Handle login failure
       }
@@ -42,6 +43,29 @@ signupButton.addEventListener('click', function() {
       }
   });
 });
+
+chrome.runtime.sendMessage({command: "checkAuth"}, function(response) {
+  if (response.result === 'loggedIn') {
+      // User is logged in, redirect to the logged in page
+      window.location.href = 'home.html';
+  } else {
+      // User is not logged in, show the login page
+      // window.location.href = 'popup.html';
+  }
+});
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+  if (message.command === "authChange") {
+      if (message.loggedIn) {
+          // User is logged in, redirect to the logged in page
+          window.location.href = 'home.html';
+      } else {
+          // User is not logged in, show the login page
+          // window.location.href = 'popup.html';
+      }
+  }
+});
+
 
   
 // document.getElementById('start-scraping').addEventListener('click', () => {
