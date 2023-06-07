@@ -20,6 +20,15 @@ logoutButton.addEventListener('click', function() {
     });
 });
 
+// Send a message to the service worker asking for the creation date
+chrome.runtime.sendMessage({ command: 'getCreationDate' }, function(response) {
+    // Get the HTML element and set its text to the creation date
+    const dateElement = document.getElementById('creationDate');
+    dateElement.textContent = 'Account created on: ' + response.creationDate;
+  });
+  
+  
+
 // loginButton.addEventListener('click', function() {
 //   var email = document.getElementById('txtEmail').value;
 //   var password = document.getElementById('txtPassword').value;

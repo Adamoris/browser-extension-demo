@@ -70,6 +70,18 @@ try {
             }
             return true; 
         }
+
+        if (msg.command == 'getCreationDate') {
+            const user = firebase.auth().currentUser;
+            if (user) {
+              // Format the creation timestamp
+              const creationDate = new Date(user.metadata.creationTime);
+              const formattedDate = creationDate.toDateString();
+        
+              // Send the creation date back to the sender
+              resp({ creationDate: formattedDate });
+            }
+          }
       });
 
     firebase.auth().onAuthStateChanged(function(user) {
